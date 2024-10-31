@@ -61,7 +61,9 @@
         
             <div class="form-group">
                 <label for="isi">Isi</label>
-                <textarea name="isi" id="isi" rows="10" class="form-control">{{ old('isi') }}</textarea>
+                <textarea name="isi" class="form-control" rows="5"  id="isi">{{ old('isi') }}</textarea>
+
+                {{-- <textarea name="isi" id="isi" rows="10" class="form-control"></textarea> --}}
             </div>
 
      
@@ -114,4 +116,19 @@
                 
     </div>
 </div>
+@endsection
+
+@section('js')
+<script>
+    // Initialize TinyMCE
+    tinymce.init({
+        selector: 'textarea#isi',  // Replace this with your field selector
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+    //    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table',
+        branding: false,
+        menubar: true,
+        height: 300
+    });
+</script>
 @endsection

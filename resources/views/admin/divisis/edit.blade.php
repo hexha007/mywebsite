@@ -26,7 +26,7 @@
 
     <div class="form-group mb-3">
         <label for="isi">Isi</label>
-        <textarea name="isi" class="form-control" rows="3" required>{{ old('isi', $divisi->isi) }}</textarea>
+        <textarea name="isi" class="form-control" rows="3" required id="isi">{{ old('isi', $divisi->isi) }}</textarea>
     </div>
 
     <div class="form-group mb-3">
@@ -37,4 +37,21 @@
 
     <button type="submit" class="btn btn-primary">Update Divisi</button>
 </form>
+@endsection
+
+
+
+@section('js')
+<script>
+    // Initialize TinyMCE
+    tinymce.init({
+        selector: 'textarea#isi',  // Replace this with your field selector
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+    //    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table',
+        branding: false,
+        menubar: true,
+        height: 300
+    });
+</script>
 @endsection

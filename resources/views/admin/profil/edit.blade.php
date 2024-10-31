@@ -43,7 +43,7 @@
         
             <div class="form-group">
                 <label for="deskripsi" class="mt-3">Deskripsi</label>
-                <textarea name="deskripsi" class="form-control">{{ $profil->deskripsi }}</textarea>
+                <textarea name="deskripsi" class="form-control" id="deskripsi">{{ $profil->deskripsi }}</textarea>
             </div>
         
             <div class="form-group">
@@ -106,3 +106,18 @@
 
 
         @endsection
+
+        @section('js')
+<script>
+    // Initialize TinyMCE
+    tinymce.init({
+        selector: 'textarea#deskripsi',  // Replace this with your field selector
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+       toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table',
+        branding: false,
+        menubar: true,
+        height: 300
+    });
+</script>
+@endsection

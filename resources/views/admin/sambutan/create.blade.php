@@ -10,3 +10,22 @@
     </form>
 </div>
 @endsection
+
+
+
+
+
+@section('js')
+<script>
+    // Initialize TinyMCE
+    tinymce.init({
+        selector: 'textarea#konten',  // Replace this with your field selector
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+    //    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table',
+        branding: false,
+        menubar: true,
+        height: 300
+    });
+</script>
+@endsection

@@ -29,5 +29,7 @@
  
 
   @include('admin.templet.js')
+
+  @yield('js')
 </body>
 </html>

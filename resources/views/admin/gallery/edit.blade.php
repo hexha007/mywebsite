@@ -37,7 +37,7 @@
 
     <div class="form-group mb-3">
         <label for="deskripsi">Deskripsi</label>
-        <textarea name="deskripsi" class="form-control" rows="3">{{ old('deskripsi', $gallery->deskripsi) }}</textarea>
+        <textarea name="deskripsi" class="form-control" rows="3" id="deskripsi">{{ old('deskripsi', $gallery->deskripsi) }}</textarea>
     </div>
 
     <div class="form-group mb-3">
@@ -54,4 +54,21 @@
 
     <button type="submit" class="btn btn-primary">Update Gallery</button>
 </form>
+@endsection
+
+
+
+@section('js')
+<script>
+    // Initialize TinyMCE
+    tinymce.init({
+        selector: 'textarea#deskripsi',  // Replace this with your field selector
+        plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+        toolbar_mode: 'floating',
+    //    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table',
+        branding: false,
+        menubar: true,
+        height: 300
+    });
+</script>
 @endsection
